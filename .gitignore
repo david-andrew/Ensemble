@@ -1,0 +1,5 @@
+reverb/
+
+speech/forced_alignment/montreal-forced-aligner_linux.tar.gz
+speech/forced_alignment/montreal-forced-aligner/lib
+speech/forced_alignment/montreal-forced-aligner/pretrained_models
