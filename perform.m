@@ -43,23 +43,23 @@ for f = 1:num_voices
             %portions of the note are sustained
             
             center_index = floor((note.vstart + note.vstop) * fs / 2);%index of the center of the vowel for possible stretching. index from the entire word, not the left + right sample only
-            [lzero, ~] = find_zero_cross(wordIn, center_index); %get the index of the nearest zero cross
+            [center_index, ~] = find_zero_cross(wordIn, center_index); %get the index of the nearest zero cross
             
             if ~note.lsust
                 %include the whole left half, including consonants
-                left = wordIn(max(floor(note.start * fs), 1):lzero);
+                left = wordIn(max(floor(note.start * fs), 1):center_index);
             else
                 %crop any consonants on the left half of the word
-                left = wordIn(max(floor(note.vstart * fs), 1):lzero);
+                left = wordIn(max(floor(note.vstart * fs), 1):center_index);
             end
             
             
             if ~note.rsust
                 %include the whole right half, including consonants
-                right = wordIn(lzero:floor(note.stop * fs));
+                right = wordIn(center_index:floor(note.stop * fs));
             else
                 %crop any consonants on the right half of the word
-                right = wordIn(lzero:floor(note.vstop * fs));
+                right = wordIn(center_index:floor(note.vstop * fs));
             end
                         
             
@@ -73,12 +73,14 @@ for f = 1:num_voices
                 wordIn = squish([left; right], fs, note.duration);   
             else
                 %copy stretch the vowel up to the right duration
-                center = stretch(wordIn, fs, lzero, note.duration - cur_duration);
+                center = stretch(wordIn, fs, center_index, note.duration - cur_duration);
                 wordIn = [left; center; right];
                 wordIn = squish(wordIn, fs, note.duration); %resample so the note is exactly the rigth duration
             end
             
-            
+%             if strcmp(note.word, 'up')
+%                 1;
+%             end
                     
             
             %compute the pitch of the sample
@@ -131,6 +133,7 @@ while exist(outpath, 'file') == 2
     outpath = [homepath '/output/' name ' (' int2str(i) ')' '.wav'];
     i = i + 1;
 end
+
 
 audiowrite(outpath, audioOut, FS);
 

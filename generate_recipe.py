@@ -21,11 +21,19 @@ import json
 import struct
 
 
-# DEBUG = False    #skip the gui file dialog, and use other default settings
-# if len(sys.argv) > 1:
+#manage command line arguments
 args = [arg.lower() for arg in sys.argv[1:]]
-VALID = 'valid' in args   #run validation on the audio corpus
-SKIP = 'skip' in args           #skip redownloading the words for the song (as in they are there from last time)
+kwargs = ['validalign', 'skiptts', 'skipalign']
+
+for arg in args:
+    if arg not in kwargs:
+        raise Exception('Error: Unrecognized command line argument "' + arg + '"')
+
+VALIDALIGN = kwargs[0] in args   #run validation on the audio corpus
+SKIPTTS = kwargs[1] in args         #skip redownloading the words for the song (as in they are there from last time)
+SKIPALIGN = kwargs[2] in args
+
+
 
 def main():
     clean_workspace()
@@ -33,13 +41,14 @@ def main():
     create_tts_palette()
     align_phonemes()
     construct_recipe()
+    combine_ties()
     call_matlab()
 
 
 
 def clean_workspace():
     """Remove any files from previous runs of this software"""
-    if SKIP: return
+    if SKIPTTS: return
 
     print('Removing old files...', end='')
     
@@ -82,7 +91,7 @@ def get_voice_type(part_name):
 
 def create_tts_palette():
     """Download all of the words used in each voice part for the piece from Google-Cloud-TTS"""
-    if SKIP: return
+    if SKIPTTS: return
     
     print('Creating Text-to-Speech wav palettes')
     for voice_name, part in zip(recipe, song.parts):
@@ -96,6 +105,7 @@ def create_tts_palette():
 
 def align_phonemes():
     """Use Montreal Forced Aligner to determine timing information of phonemes in each word"""
+    if SKIPALIGN: return
     print('Aligning phonemes for all voices')
     
     for voice_name in recipe:
@@ -103,7 +113,7 @@ def align_phonemes():
         
 
         #only run manually when songs have lots of errors during alignment
-        if VALID:
+        if VALIDALIGN:
             #run validation on phoneme alignment before attempting to align
             validate = ['speech/forced_alignment/montreal-forced-aligner/bin/mfa_validate_dataset', 
             'speech/voices/'+voice_name+'/', 
@@ -353,6 +363,10 @@ def download_words(dictionary, voice_name, tts_speaker, speed=110):
         with open(directory + word + '.lab', 'w') as out:
             out.write(word.upper())
 
+        #save a blank file for the textgrid? Experimenting to see if this helps the aligner to not crash
+        with open(directory + 'aligned/' + word + '.TextGrid', 'w') as out:
+            out.write('') 
+
 def clip_silence(waveform):
     """return a waveform with no leading or trailing silence"""
     header = waveform[:44]
@@ -435,6 +449,29 @@ def print_recipe():
         for note in part:
             print(note)
         print()
+
+def combine_ties():
+    """Run a pass over each part of the recipe and combine tied (not slurred) notes into a single note event"""
+    equality_keys = ['volume', 'pitch', 'word', 'structure', 'start', 'stop', 'vstart', 'vstop']
+
+    for voice, part in recipe.items():
+        i = 0
+        while i + 1 < len(part):
+            if part[i]['rsust'] and part[i+1]['lsust']:  #check if word is sustained into the next note
+                note0 = {key:val for key, val in part[i].items() if key in equality_keys}
+                note1 = {key:val for key, val in part[i+1].items() if key in equality_keys}
+                if note0 == note1:  #confirm that it is a sustain, and not a slur/syllable change/etc.
+                    combined = note0
+                    combined['duration'] = part[i]['duration'] + part[i+1]['duration']
+                    combined['lsust'] = part[i]['lsust']
+                    combined['rsust'] = part[i+1]['rsust']
+
+                    part[i] = combined
+                    del part[i+1]
+                    i -= 1
+            i += 1
+
+
 
 
 
