@@ -27,7 +27,7 @@ index = loc;    %for now assuming we are at a zero cross
 
 
 %compute the pitch of the sample
-[f0,idx] = pitch(in,fs);
+[f0,idx] = pitch(in,fs, 'Method', 'NCF', 'MedianFilterLength', 25);
 idx = idx(~isnan(f0));
 f0 = f0(~isnan(f0));
 

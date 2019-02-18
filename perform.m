@@ -50,7 +50,7 @@ for f = 1:num_voices
                 left = wordIn(max(floor(note.start * fs), 1):lzero);
             else
                 %crop any consonants on the left half of the word
-                left = wordIn(floor(note.vstart * fs):lzero);
+                left = wordIn(max(floor(note.vstart * fs), 1):lzero);
             end
             
             
@@ -82,7 +82,7 @@ for f = 1:num_voices
                     
             
             %compute the pitch of the sample
-            [f0,idx] = pitch(wordIn,fs);
+            [f0,idx] = pitch(wordIn,fs, 'Method', 'NCF', 'MedianFilterLength', 25);
             idx = idx(~isnan(f0));
             f0 = f0(~isnan(f0));
             f_target = note.pitch;
@@ -121,9 +121,11 @@ end
 
 audioOut = audioOut(start:stop); %chop off extra padded sound
 
-% fprintf('Adding reverb to performance\n');
-% audioOut = add_reverb(audioOut, FS, 2.5);
+fprintf('Adding reverb to performance\n');
+audioOut = add_reverb(audioOut, FS, 1);
 
 audiowrite([homepath '/output/' name '.wav'], audioOut, FS);
 
-exit %make matlab quit in the terminal, to return control to python
+if ~usejava('desktop')
+    exit %make matlab quit in the terminal, to return control to python
+end

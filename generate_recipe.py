@@ -17,11 +17,15 @@ from google.cloud import texttospeech
 
 #other tools
 import json
+# import numpy as np
+import struct
 
 
-DEBUG = False    #skip the gui file dialog, and use other default settings
-if len(sys.argv) > 1:
-    DEBUG = sys.argv[1].lower() == 'debug'
+# DEBUG = False    #skip the gui file dialog, and use other default settings
+# if len(sys.argv) > 1:
+args = [arg.lower() for arg in sys.argv[1:]]
+VALID = 'valid' in args   #run validation on the audio corpus
+SKIP = 'skip' in args           #skip redownloading the words for the song (as in they are there from last time)
 
 def main():
     clean_workspace()
@@ -35,6 +39,8 @@ def main():
 
 def clean_workspace():
     """Remove any files from previous runs of this software"""
+    if SKIP: return
+
     print('Removing old files...', end='')
     
     try:
@@ -76,6 +82,8 @@ def get_voice_type(part_name):
 
 def create_tts_palette():
     """Download all of the words used in each voice part for the piece from Google-Cloud-TTS"""
+    if SKIP: return
+    
     print('Creating Text-to-Speech wav palettes')
     for voice_name, part in zip(recipe, song.parts):
         voice_type = get_voice_type(voice_name)
@@ -95,7 +103,7 @@ def align_phonemes():
         
 
         #only run manually when songs have lots of errors during alignment
-        if DEBUG:
+        if VALID:
             #run validation on phoneme alignment before attempting to align
             validate = ['speech/forced_alignment/montreal-forced-aligner/bin/mfa_validate_dataset', 
             'speech/voices/'+voice_name+'/', 
@@ -201,7 +209,7 @@ def call_matlab():
     with open(recipe_path, 'w') as out:
         json.dump(recipe, out)
 
-    # print_recipe()
+    #print_recipe()
 
     #call matlab from the command line to construct the performance with the recipe
     #in the future want an encapsulated MEX script so that anyone can use this tool without matlab    
@@ -211,7 +219,7 @@ def call_matlab():
 
 
     #when matlab is finished, open the song with an audio player, e.g. vlc player
-    command = ['vlc', 'output/' + song_name + '.wav']
+    command = ['vlc', '--play-and-exit', 'output/' + song_name + '.wav']
     subprocess.call(command)
 
 
@@ -315,7 +323,7 @@ def get_prev(note):
     raise ValueError('Get previous note was not able to find a previous note')
 
 
-def download_words(dictionary, voice_name, tts_speaker, speed=80):
+def download_words(dictionary, voice_name, tts_speaker, speed=110):
     """download all of the words specified in the dictionary for the given voice part"""
     for word in dictionary:
         print('Downloading "' + word + '" for ' + str(voice_name))
@@ -328,6 +336,7 @@ def download_words(dictionary, voice_name, tts_speaker, speed=80):
         # voice parameters and audio file type
         voice_spec = texttospeech.types.VoiceSelectionParams(language_code='en-GB', name=tts_speaker)
         response = tts_client.synthesize_speech(synthesis_input, voice_spec, audio_config)
+        waveform = clip_silence(response.audio_content)
 
         #save the audio file to disk for use in matlab
         directory = 'speech/voices/' + voice_name + '/'
@@ -338,12 +347,27 @@ def download_words(dictionary, voice_name, tts_speaker, speed=80):
         #save the audio wav file
         with open(directory + word + '.wav', 'wb') as out:
             # print('saving track "' + word + '.wav' '"')
-            out.write(response.audio_content)
+            out.write(waveform)
 
         #save the transcript for the forced aligner
         with open(directory + word + '.lab', 'w') as out:
             out.write(word.upper())
 
+def clip_silence(waveform):
+    """return a waveform with no leading or trailing silence"""
+    header = waveform[:44]
+    sound = waveform[44:]
+
+    start = 0
+    while sound[start] == 0 and sound[start+1] == 0: #linear pcm means each sample is 2 bytes
+        start += 2
+
+    stop = len(sound) - 2
+    while sound[stop] == 0 and sound[stop + 1] == 0:
+        stop -= 2
+
+    header = header[:40] + struct.pack('I', stop-start) #modify the size in the header based on the new length of the sample
+    return header + sound[start:stop]
 
 
 def segment_word(note, voice_name):
@@ -426,13 +450,23 @@ audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.
 
 
 #tts_speaker = voice_map[element.instrument.instrumentName]
+#British English Voices
 tts_voices = {
     'Soprano':  'en-GB-Wavenet-A',  #en-US-Wavenet-F
     'Alto':     'en-GB-Wavenet-C',  #en-US-Wavenet-C, en-US-Wavenet-E, 
-    'Tenor':    'en-GB-Wavenet-B',  #en-US-Wavenet-A
+    'Tenor':    'en-GB-Wavenet-D',  #en-US-Wavenet-A #en-GB-Wavenet-B doesn't seem to work very well, even though it sounds like a temor, so using the bass voice of D
     'Baritone': 'en-GB-Wavenet-D',
     'Bass':     'en-GB-Wavenet-D',  #en-US-Wavenet-B, en-US-Wavenet-D
 }
+
+#American English Voices
+# tts_voices = {
+#     'Soprano':  'en-US-Wavenet-F',  #en-US-Wavenet-F
+#     'Alto':     'en-US-Wavenet-C',  #en-US-Wavenet-C, en-US-Wavenet-E, 
+#     'Tenor':    'en-Us-Wavenet-A',  #en-US-Wavenet-A
+#     'Baritone': 'en-US-Wavenet-B',
+#     'Bass':     'en-US-Wavenet-D',  #en-US-Wavenet-B, en-US-Wavenet-D
+# }
 
 #map dynamics mark to volume (perhaps convert these to midi key velocity?)
 volume_map = {
