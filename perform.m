@@ -124,7 +124,15 @@ audioOut = audioOut(start:stop); %chop off extra padded sound
 fprintf('Adding reverb to performance\n');
 audioOut = add_reverb(audioOut, FS, 1);
 
-audiowrite([homepath '/output/' name '.wav'], audioOut, FS);
+%determine the path to write the file to (ensuring not to overwrite existing files)
+outpath = [homepath '/output/' name '.wav'];
+i = 1;
+while exist(outpath, 'file') == 2
+    outpath = [homepath '/output/' name ' (' int2str(i) ')' '.wav'];
+    i = i + 1;
+end
+
+audiowrite(outpath, audioOut, FS);
 
 if ~usejava('desktop')
     exit %make matlab quit in the terminal, to return control to python

@@ -14,10 +14,9 @@ $ python3 generate_recipe.py
 select a MusicXML file from the dialog, and then the song will be placed in the `/output` folder
 
 
-# TODO
-* format this as markdown
+# To-Do
 * test sustained notes that combine to be a single note (e.g. quarter tied to eight vs dotted quarter). should produce identical notes in both cases. look into combining such notes in the recipe back into a single note
-* (possibly same cause as above) figure out why there are sometimes gaps in sound signals placed
+* (possibly same cause as above) figure out why there are sometimes gaps in sound signals placed. sound should be connected between words and syllables unless there is a rest
 * look into dynamics control based on the intensity of the waveform
 * make it so that parts can have multiple notes at the same time (chords I think?)
 * make it so that multiple voices can be on the same line at a time
@@ -26,4 +25,5 @@ select a MusicXML file from the dialog, and then the song will be placed in the 
 * figure out why the forced aligner fails in a lot of cases
 * make each voice part use multiple singers
 * add vibratto and tremolo to voices, esp for sustained notes
-* 
+* look into ways for not redownloading the same voice clip multiple times, e.g. keep track of which voices downloaded which words, and store them centrally, and then copy them into each parts' folder as needed
+* for time stretching samples, look into some method to evaluate the quality of the period selected. Sometimes it sounds like an artifact is selected as part of the period, so perhaps the method could be to sweep over the vowel and pull out a period that is most average
