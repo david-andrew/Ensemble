@@ -1,10 +1,10 @@
 # System Requirments
 1. Python
-..* google cloud text to speech
-..* music21
-..* textgrid
+    * google cloud text to speech
+    * music21
+    * textgrid
 2. Matlab
-..* digital signals processing toolbox
+    * digital signals processing toolbox
 
 
 # How to use:
