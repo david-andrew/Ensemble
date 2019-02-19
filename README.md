@@ -1,4 +1,4 @@
-# System Requirments
+# System Requirments:
 1. Python
     * google cloud text to speech
     * music21
@@ -11,10 +11,12 @@
 ```
 $ python3 generate_recipe.py
 ```
-select a MusicXML file from the dialog, and then the song will be placed in the `/output` folder
+select a valid MusicXML file from the dialog, and then the song performances will be placed in the `/output` folder. 
 
+# Examples:
+The sheet music (MusicXML) for several pieces is available in the `/sheet_music` folder. Example performances (WAV) of the pieces are available in the `/output` folder
 
-# To-Do
+# To-Do:
 * test sustained notes that combine to be a single note (e.g. quarter tied to eight vs dotted quarter). should produce identical notes in both cases. look into combining such notes in the recipe back into a single note
 * (possibly same cause as above) figure out why there are sometimes gaps in sound signals placed. sound should be connected between words and syllables unless there is a rest
 * look into dynamics control based on the intensity of the waveform
