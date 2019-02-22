@@ -14,7 +14,7 @@ $ python3 generate.py
 select a valid MusicXML file from the dialog, and then the song performances will be placed in the `/output` folder. 
 
 # Examples:
-The sheet music (MusicXML) for several pieces is available in the `/sheet_music` folder. Example performances (WAV) of the pieces are available in the `/output` folder
+The sheet music (MusicXML) for several pieces is available in the `/sheet_music` folder. Example performances (WAV) of the pieces are available in the `/output/demos` folder
 
 # To-Do:
 * look into ways for not redownloading the same voice clip multiple times, e.g. keep track of which voices downloaded which words, and store them centrally, and then copy them into each parts' folder as needed. put them in the tts_database folder with their settings in their name. also include the textgrid in the same folder with the same name
