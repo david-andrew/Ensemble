@@ -9,7 +9,7 @@
 arr. David Samson</creator>
     <encoding>
       <software>MuseScore 2.1.0</software>
-      <encoding-date>2019-02-05</encoding-date>
+      <encoding-date>2019-02-22</encoding-date>
       <supports element="accidental" type="yes"/>
       <supports element="beam" type="yes"/>
       <supports element="print" attribute="new-page" type="yes" value="yes"/>
@@ -42,7 +42,7 @@ arr. David Samson</creator>
     <lyric-font font-family="FreeSerif" font-size="11"/>
     </defaults>
   <credit page="1">
-    <credit-words default-x="1134.19" default-y="1476.67" justify="right" valign="bottom" font-size="12">Vince Guaraldi
+    <credit-words default-x="1134.19" default-y="1451.67" justify="right" valign="bottom" font-size="12">Vince Guaraldi
 </credit-words>
     <credit-words>arr. David Samson</credit-words>
     </credit>
@@ -115,7 +115,7 @@ arr. David Samson</creator>
             <left-margin>75.50</left-margin>
             <right-margin>0.00</right-margin>
             </system-margins>
-          <top-system-distance>220.00</top-system-distance>
+          <top-system-distance>245.00</top-system-distance>
           </system-layout>
         </print>
       <attributes>
@@ -357,12 +357,12 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="6" width="261.78">
+    <measure number="6" width="263.28">
       <print new-system="yes">
         <system-layout>
           <system-margins>
             <left-margin>29.41</left-margin>
-            <right-margin>0.00</right-margin>
+            <right-margin>-0.00</right-margin>
             </system-margins>
           <system-distance>150.00</system-distance>
           </system-layout>
@@ -397,7 +397,7 @@ arr. David Samson</creator>
           <text>ren</text>
           </lyric>
         </note>
-      <note default-x="154.52" default-y="-40.00">
+      <note default-x="155.03" default-y="-40.00">
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -412,7 +412,7 @@ arr. David Samson</creator>
           <text>call</text>
           </lyric>
         </note>
-      <note default-x="223.32" default-y="-40.00">
+      <note default-x="224.82" default-y="-40.00">
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -429,8 +429,8 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="7" width="195.39">
-      <note default-x="28.60" default-y="-45.00">
+    <measure number="7" width="187.90">
+      <note default-x="19.43" default-y="-45.00">
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -442,10 +442,10 @@ arr. David Samson</creator>
         <beam number="1">begin</beam>
         <lyric number="1">
           <syllabic>begin</syllabic>
-          <text>favor</text>
+          <text>fav</text>
           </lyric>
         </note>
-      <note default-x="68.87" default-y="-35.00">
+      <note default-x="54.14" default-y="-35.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -457,10 +457,10 @@ arr. David Samson</creator>
         <beam number="1">end</beam>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ite</text>
+          <text>'rite</text>
           </lyric>
         </note>
-      <note default-x="102.00" default-y="-45.00">
+      <note default-x="92.04" default-y="-45.00">
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -474,7 +474,7 @@ arr. David Samson</creator>
           <text>time</text>
           </lyric>
         </note>
-      <note default-x="147.90" default-y="-35.00">
+      <note default-x="139.17" default-y="-35.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -489,7 +489,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="8" width="100.43">
+    <measure number="8" width="101.93">
       <note default-x="24.67" default-y="-30.00">
         <pitch>
           <step>G</step>
@@ -506,7 +506,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="9" width="212.33">
+    <measure number="9" width="213.83">
       <note default-x="32.57" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -539,7 +539,7 @@ arr. David Samson</creator>
           <text>bells</text>
           </lyric>
         </note>
-      <note default-x="114.70" default-y="-25.00">
+      <note default-x="115.17" default-y="-25.00">
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -555,7 +555,7 @@ arr. David Samson</creator>
           <text>in</text>
           </lyric>
         </note>
-      <note default-x="177.96" default-y="-15.00">
+      <note default-x="179.34" default-y="-15.00">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -570,7 +570,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="10" width="88.81">
+    <measure number="10" width="90.31">
       <note default-x="17.67" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -587,7 +587,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="11" width="189.34">
+    <measure number="11" width="190.84">
       <note default-x="25.93" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -620,7 +620,7 @@ arr. David Samson</creator>
           <text>ty</text>
           </lyric>
         </note>
-      <note default-x="98.00" default-y="-25.00">
+      <note default-x="98.51" default-y="-25.00">
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -636,7 +636,7 @@ arr. David Samson</creator>
           <text>eve</text>
           </lyric>
         </note>
-      <note default-x="154.96" default-y="-15.00">
+      <note default-x="156.46" default-y="-15.00">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -651,7 +651,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="12" width="203.32">
+    <measure number="12" width="204.45">
       <print new-page="yes">
         <system-layout>
           <system-margins>
@@ -677,7 +677,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="13" width="229.80">
+    <measure number="13" width="230.93">
       <note default-x="26.20" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -708,7 +708,7 @@ arr. David Samson</creator>
           <text>tide</text>
           </lyric>
         </note>
-      <note default-x="104.62" default-y="-25.00">
+      <note default-x="104.89" default-y="-25.00">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -722,7 +722,7 @@ arr. David Samson</creator>
           <text>by</text>
           </lyric>
         </note>
-      <note default-x="166.41" default-y="-15.00">
+      <note default-x="167.11" default-y="-15.00">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -737,7 +737,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="14" width="206.73">
+    <measure number="14" width="207.87">
       <note default-x="18.42" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -753,7 +753,7 @@ arr. David Samson</creator>
           <text>fi</text>
           </lyric>
         </note>
-      <note default-x="56.13" default-y="-25.00">
+      <note default-x="56.36" default-y="-25.00">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -768,7 +768,7 @@ arr. David Samson</creator>
           <text>re</text>
           </lyric>
         </note>
-      <note default-x="93.84" default-y="-25.00">
+      <note default-x="94.30" default-y="-25.00">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -783,7 +783,7 @@ arr. David Samson</creator>
           <text>side</text>
           </lyric>
         </note>
-      <note default-x="167.42" default-y="-20.00">
+      <note default-x="168.32" default-y="-20.00">
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -799,7 +799,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="15" width="240.79">
+    <measure number="15" width="236.26">
       <note default-x="19.79" default-y="-20.00">
         <pitch>
           <step>B</step>
@@ -816,7 +816,7 @@ arr. David Samson</creator>
           <text>joy</text>
           </lyric>
         </note>
-      <note default-x="61.98" default-y="-30.00">
+      <note default-x="61.11" default-y="-30.00">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -831,7 +831,7 @@ arr. David Samson</creator>
           <text>ful</text>
           </lyric>
         </note>
-      <note default-x="104.18" default-y="-30.00">
+      <note default-x="102.43" default-y="-30.00">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -845,7 +845,7 @@ arr. David Samson</creator>
           <text>mem</text>
           </lyric>
         </note>
-      <note default-x="171.68" default-y="-25.00">
+      <note default-x="168.55" default-y="-25.00">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -856,11 +856,11 @@ arr. David Samson</creator>
         <stem>up</stem>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ories</text>
+          <text>'ries</text>
           </lyric>
         </note>
       </measure>
-    <measure number="16" width="167.44">
+    <measure number="16" width="168.58">
       <note default-x="28.17" default-y="-25.00">
         <pitch>
           <step>A</step>
@@ -1120,7 +1120,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="6" width="261.78">
+    <measure number="6" width="263.28">
       <print new-system="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -1156,7 +1156,7 @@ arr. David Samson</creator>
           <text>ren</text>
           </lyric>
         </note>
-      <note default-x="154.52" default-y="-170.00">
+      <note default-x="155.03" default-y="-170.00">
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1171,7 +1171,7 @@ arr. David Samson</creator>
           <text>call</text>
           </lyric>
         </note>
-      <note default-x="223.32" default-y="-170.00">
+      <note default-x="224.82" default-y="-170.00">
         <pitch>
           <step>C</step>
           <alter>-1</alter>
@@ -1188,8 +1188,8 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="7" width="195.39">
-      <note default-x="28.60" default-y="-175.00">
+    <measure number="7" width="187.90">
+      <note default-x="19.43" default-y="-175.00">
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1202,10 +1202,10 @@ arr. David Samson</creator>
         <beam number="1">begin</beam>
         <lyric number="1">
           <syllabic>begin</syllabic>
-          <text>favor</text>
+          <text>fav</text>
           </lyric>
         </note>
-      <note default-x="68.87" default-y="-175.00">
+      <note default-x="54.14" default-y="-175.00">
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1218,10 +1218,10 @@ arr. David Samson</creator>
         <beam number="1">end</beam>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ite</text>
+          <text>'rite</text>
           </lyric>
         </note>
-      <note default-x="102.00" default-y="-175.00">
+      <note default-x="92.04" default-y="-175.00">
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1236,7 +1236,7 @@ arr. David Samson</creator>
           <text>time</text>
           </lyric>
         </note>
-      <note default-x="147.90" default-y="-165.00">
+      <note default-x="139.17" default-y="-165.00">
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1251,7 +1251,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="8" width="100.43">
+    <measure number="8" width="101.93">
       <note default-x="24.67" default-y="-160.00">
         <pitch>
           <step>E</step>
@@ -1268,7 +1268,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="9" width="212.33">
+    <measure number="9" width="213.83">
       <note default-x="32.57" default-y="-155.00">
         <pitch>
           <step>F</step>
@@ -1299,7 +1299,7 @@ arr. David Samson</creator>
           <text>bells</text>
           </lyric>
         </note>
-      <note default-x="114.70" default-y="-155.00">
+      <note default-x="115.17" default-y="-155.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1314,7 +1314,7 @@ arr. David Samson</creator>
           <text>in</text>
           </lyric>
         </note>
-      <note default-x="177.96" default-y="-155.00">
+      <note default-x="179.34" default-y="-155.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1329,7 +1329,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="10" width="88.81">
+    <measure number="10" width="90.31">
       <note default-x="17.67" default-y="-160.00">
         <pitch>
           <step>E</step>
@@ -1346,7 +1346,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="11" width="189.34">
+    <measure number="11" width="190.84">
       <note default-x="25.93" default-y="-155.00">
         <pitch>
           <step>F</step>
@@ -1377,7 +1377,7 @@ arr. David Samson</creator>
           <text>ty</text>
           </lyric>
         </note>
-      <note default-x="98.00" default-y="-155.00">
+      <note default-x="98.51" default-y="-155.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1392,7 +1392,7 @@ arr. David Samson</creator>
           <text>eve</text>
           </lyric>
         </note>
-      <note default-x="154.96" default-y="-155.00">
+      <note default-x="156.46" default-y="-155.00">
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1407,7 +1407,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="12" width="203.32">
+    <measure number="12" width="204.45">
       <print new-page="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -1429,7 +1429,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="13" width="229.80">
+    <measure number="13" width="230.93">
       <note default-x="26.20" default-y="-160.00">
         <pitch>
           <step>E</step>
@@ -1460,7 +1460,7 @@ arr. David Samson</creator>
           <text>tide</text>
           </lyric>
         </note>
-      <note default-x="104.62" default-y="-160.00">
+      <note default-x="104.89" default-y="-160.00">
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1474,7 +1474,7 @@ arr. David Samson</creator>
           <text>by</text>
           </lyric>
         </note>
-      <note default-x="166.41" default-y="-165.00">
+      <note default-x="167.11" default-y="-165.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1491,7 +1491,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="14" width="206.73">
+    <measure number="14" width="207.87">
       <note default-x="18.42" default-y="-160.00">
         <pitch>
           <step>E</step>
@@ -1507,7 +1507,7 @@ arr. David Samson</creator>
           <text>fi</text>
           </lyric>
         </note>
-      <note default-x="56.13" default-y="-160.00">
+      <note default-x="56.36" default-y="-160.00">
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1522,7 +1522,7 @@ arr. David Samson</creator>
           <text>re</text>
           </lyric>
         </note>
-      <note default-x="93.84" default-y="-160.00">
+      <note default-x="94.30" default-y="-160.00">
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1537,7 +1537,7 @@ arr. David Samson</creator>
           <text>side</text>
           </lyric>
         </note>
-      <note default-x="167.42" default-y="-160.00">
+      <note default-x="168.32" default-y="-160.00">
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1552,7 +1552,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="15" width="240.79">
+    <measure number="15" width="236.26">
       <note default-x="19.79" default-y="-165.00">
         <pitch>
           <step>D</step>
@@ -1568,7 +1568,7 @@ arr. David Samson</creator>
           <text>joy</text>
           </lyric>
         </note>
-      <note default-x="61.98" default-y="-165.00">
+      <note default-x="61.11" default-y="-165.00">
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1583,7 +1583,7 @@ arr. David Samson</creator>
           <text>ful</text>
           </lyric>
         </note>
-      <note default-x="104.18" default-y="-165.00">
+      <note default-x="102.43" default-y="-165.00">
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1597,7 +1597,7 @@ arr. David Samson</creator>
           <text>mem</text>
           </lyric>
         </note>
-      <note default-x="171.68" default-y="-160.00">
+      <note default-x="168.55" default-y="-160.00">
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1610,11 +1610,11 @@ arr. David Samson</creator>
         <stem>up</stem>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ories</text>
+          <text>'ries</text>
           </lyric>
         </note>
       </measure>
-    <measure number="16" width="167.44">
+    <measure number="16" width="168.58">
       <note default-x="28.17" default-y="-165.00">
         <pitch>
           <step>D</step>
@@ -1879,7 +1879,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="6" width="261.78">
+    <measure number="6" width="263.28">
       <print new-system="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -1915,7 +1915,7 @@ arr. David Samson</creator>
           <text>ren</text>
           </lyric>
         </note>
-      <note default-x="154.52" default-y="-270.00">
+      <note default-x="155.03" default-y="-270.00">
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1930,7 +1930,7 @@ arr. David Samson</creator>
           <text>call</text>
           </lyric>
         </note>
-      <note default-x="223.32" default-y="-270.00">
+      <note default-x="224.82" default-y="-270.00">
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -1947,8 +1947,8 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="7" width="195.39">
-      <note default-x="28.60" default-y="-275.00">
+    <measure number="7" width="187.90">
+      <note default-x="19.43" default-y="-275.00">
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1960,10 +1960,10 @@ arr. David Samson</creator>
         <beam number="1">begin</beam>
         <lyric number="1">
           <syllabic>begin</syllabic>
-          <text>favor</text>
+          <text>fav</text>
           </lyric>
         </note>
-      <note default-x="68.87" default-y="-285.00">
+      <note default-x="54.14" default-y="-285.00">
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -1975,10 +1975,10 @@ arr. David Samson</creator>
         <beam number="1">end</beam>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ite</text>
+          <text>'rite</text>
           </lyric>
         </note>
-      <note default-x="102.00" default-y="-275.00">
+      <note default-x="92.04" default-y="-275.00">
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1992,7 +1992,7 @@ arr. David Samson</creator>
           <text>time</text>
           </lyric>
         </note>
-      <note default-x="147.90" default-y="-260.00">
+      <note default-x="139.17" default-y="-260.00">
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2008,7 +2008,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="8" width="100.43">
+    <measure number="8" width="101.93">
       <note default-x="24.67" default-y="-265.00">
         <pitch>
           <step>A</step>
@@ -2025,7 +2025,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="9" width="212.33">
+    <measure number="9" width="213.83">
       <note default-x="32.57" default-y="-265.00">
         <pitch>
           <step>A</step>
@@ -2058,7 +2058,7 @@ arr. David Samson</creator>
           <text>bells</text>
           </lyric>
         </note>
-      <note default-x="114.70" default-y="-255.00">
+      <note default-x="115.17" default-y="-255.00">
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2073,7 +2073,7 @@ arr. David Samson</creator>
           <text>in</text>
           </lyric>
         </note>
-      <note default-x="177.96" default-y="-265.00">
+      <note default-x="179.34" default-y="-265.00">
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2089,7 +2089,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="10" width="88.81">
+    <measure number="10" width="90.31">
       <note default-x="17.67" default-y="-260.00">
         <pitch>
           <step>B</step>
@@ -2107,7 +2107,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="11" width="189.34">
+    <measure number="11" width="190.84">
       <note default-x="25.93" default-y="-265.00">
         <pitch>
           <step>A</step>
@@ -2140,7 +2140,7 @@ arr. David Samson</creator>
           <text>ty</text>
           </lyric>
         </note>
-      <note default-x="98.00" default-y="-255.00">
+      <note default-x="98.51" default-y="-255.00">
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2155,7 +2155,7 @@ arr. David Samson</creator>
           <text>eve</text>
           </lyric>
         </note>
-      <note default-x="154.96" default-y="-265.00">
+      <note default-x="156.46" default-y="-265.00">
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2171,7 +2171,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="12" width="203.32">
+    <measure number="12" width="204.45">
       <print new-page="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -2194,7 +2194,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="13" width="229.80">
+    <measure number="13" width="230.93">
       <note default-x="26.20" default-y="-270.00">
         <pitch>
           <step>G</step>
@@ -2225,7 +2225,7 @@ arr. David Samson</creator>
           <text>tide</text>
           </lyric>
         </note>
-      <note default-x="104.62" default-y="-270.00">
+      <note default-x="104.89" default-y="-270.00">
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2239,7 +2239,7 @@ arr. David Samson</creator>
           <text>by</text>
           </lyric>
         </note>
-      <note default-x="166.41" default-y="-270.00">
+      <note default-x="167.11" default-y="-270.00">
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2254,7 +2254,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="14" width="206.73">
+    <measure number="14" width="207.87">
       <note default-x="18.42" default-y="-275.00">
         <pitch>
           <step>F</step>
@@ -2272,7 +2272,7 @@ arr. David Samson</creator>
           <text>fi</text>
           </lyric>
         </note>
-      <note default-x="56.13" default-y="-275.00">
+      <note default-x="56.36" default-y="-275.00">
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2288,7 +2288,7 @@ arr. David Samson</creator>
           <text>re</text>
           </lyric>
         </note>
-      <note default-x="93.84" default-y="-275.00">
+      <note default-x="94.30" default-y="-275.00">
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2304,7 +2304,7 @@ arr. David Samson</creator>
           <text>side</text>
           </lyric>
         </note>
-      <note default-x="167.42" default-y="-275.00">
+      <note default-x="168.32" default-y="-275.00">
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2320,7 +2320,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="15" width="240.79">
+    <measure number="15" width="236.26">
       <note default-x="19.79" default-y="-275.00">
         <pitch>
           <step>F</step>
@@ -2336,7 +2336,7 @@ arr. David Samson</creator>
           <text>joy</text>
           </lyric>
         </note>
-      <note default-x="61.98" default-y="-275.00">
+      <note default-x="61.11" default-y="-275.00">
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2351,7 +2351,7 @@ arr. David Samson</creator>
           <text>ful</text>
           </lyric>
         </note>
-      <note default-x="104.18" default-y="-275.00">
+      <note default-x="102.43" default-y="-275.00">
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2365,7 +2365,7 @@ arr. David Samson</creator>
           <text>mem</text>
           </lyric>
         </note>
-      <note default-x="171.68" default-y="-275.00">
+      <note default-x="168.55" default-y="-275.00">
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2376,11 +2376,11 @@ arr. David Samson</creator>
         <stem>up</stem>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ories</text>
+          <text>'ries</text>
           </lyric>
         </note>
       </measure>
-    <measure number="16" width="167.44">
+    <measure number="16" width="168.58">
       <note default-x="28.17" default-y="-275.00">
         <pitch>
           <step>F</step>
@@ -2398,7 +2398,7 @@ arr. David Samson</creator>
           <text>there.</text>
           </lyric>
         </note>
-      <note default-x="107.49" default-y="-280.00">
+      <note default-x="108.19" default-y="-280.00">
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2660,7 +2660,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="6" width="261.78">
+    <measure number="6" width="263.28">
       <print new-system="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -2696,7 +2696,7 @@ arr. David Samson</creator>
           <text>ren</text>
           </lyric>
         </note>
-      <note default-x="154.52" default-y="-395.00">
+      <note default-x="155.03" default-y="-395.00">
         <pitch>
           <step>A</step>
           <octave>2</octave>
@@ -2711,7 +2711,7 @@ arr. David Samson</creator>
           <text>call</text>
           </lyric>
         </note>
-      <note default-x="223.32" default-y="-395.00">
+      <note default-x="224.82" default-y="-395.00">
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2728,8 +2728,8 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="7" width="195.39">
-      <note default-x="28.60" default-y="-400.00">
+    <measure number="7" width="187.90">
+      <note default-x="19.43" default-y="-400.00">
         <pitch>
           <step>G</step>
           <octave>2</octave>
@@ -2741,10 +2741,10 @@ arr. David Samson</creator>
         <beam number="1">begin</beam>
         <lyric number="1">
           <syllabic>begin</syllabic>
-          <text>favor</text>
+          <text>fav</text>
           </lyric>
         </note>
-      <note default-x="68.87" default-y="-400.00">
+      <note default-x="54.14" default-y="-400.00">
         <pitch>
           <step>G</step>
           <octave>2</octave>
@@ -2756,10 +2756,10 @@ arr. David Samson</creator>
         <beam number="1">end</beam>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ite</text>
+          <text>'rite</text>
           </lyric>
         </note>
-      <note default-x="102.00" default-y="-400.00">
+      <note default-x="92.04" default-y="-400.00">
         <pitch>
           <step>G</step>
           <octave>2</octave>
@@ -2773,7 +2773,7 @@ arr. David Samson</creator>
           <text>time</text>
           </lyric>
         </note>
-      <note default-x="147.90" default-y="-385.00">
+      <note default-x="139.17" default-y="-385.00">
         <pitch>
           <step>C</step>
           <octave>3</octave>
@@ -2788,7 +2788,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="8" width="100.43">
+    <measure number="8" width="101.93">
       <note default-x="24.67" default-y="-405.00">
         <pitch>
           <step>F</step>
@@ -2805,7 +2805,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="9" width="212.33">
+    <measure number="9" width="213.83">
       <note default-x="32.57" default-y="-380.00">
         <pitch>
           <step>D</step>
@@ -2839,7 +2839,7 @@ arr. David Samson</creator>
           <text>bells</text>
           </lyric>
         </note>
-      <note default-x="114.70" default-y="-380.00">
+      <note default-x="115.17" default-y="-380.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2855,7 +2855,7 @@ arr. David Samson</creator>
           <text>in</text>
           </lyric>
         </note>
-      <note default-x="177.96" default-y="-380.00">
+      <note default-x="179.34" default-y="-380.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2871,7 +2871,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="10" width="88.81">
+    <measure number="10" width="90.31">
       <note default-x="17.67" default-y="-365.00">
         <pitch>
           <step>G</step>
@@ -2890,7 +2890,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="11" width="189.34">
+    <measure number="11" width="190.84">
       <note default-x="25.93" default-y="-380.00">
         <pitch>
           <step>D</step>
@@ -2924,7 +2924,7 @@ arr. David Samson</creator>
           <text>ty</text>
           </lyric>
         </note>
-      <note default-x="98.00" default-y="-380.00">
+      <note default-x="98.51" default-y="-380.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2940,7 +2940,7 @@ arr. David Samson</creator>
           <text>eve</text>
           </lyric>
         </note>
-      <note default-x="154.96" default-y="-380.00">
+      <note default-x="156.46" default-y="-380.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2956,7 +2956,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="12" width="203.32">
+    <measure number="12" width="204.45">
       <print new-page="yes">
         <staff-layout number="1">
           <staff-distance>80.00</staff-distance>
@@ -2980,7 +2980,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="13" width="229.80">
+    <measure number="13" width="230.93">
       <note default-x="26.20" default-y="-395.00">
         <pitch>
           <step>A</step>
@@ -3011,7 +3011,7 @@ arr. David Samson</creator>
           <text>tide</text>
           </lyric>
         </note>
-      <note default-x="104.62" default-y="-395.00">
+      <note default-x="104.89" default-y="-395.00">
         <pitch>
           <step>A</step>
           <octave>2</octave>
@@ -3025,7 +3025,7 @@ arr. David Samson</creator>
           <text>by</text>
           </lyric>
         </note>
-      <note default-x="166.41" default-y="-375.00">
+      <note default-x="167.11" default-y="-375.00">
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -3042,7 +3042,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="14" width="206.73">
+    <measure number="14" width="207.87">
       <note default-x="18.42" default-y="-380.00">
         <pitch>
           <step>D</step>
@@ -3058,7 +3058,7 @@ arr. David Samson</creator>
           <text>fi</text>
           </lyric>
         </note>
-      <note default-x="56.13" default-y="-380.00">
+      <note default-x="56.36" default-y="-380.00">
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -3073,7 +3073,7 @@ arr. David Samson</creator>
           <text>re</text>
           </lyric>
         </note>
-      <note default-x="93.84" default-y="-380.00">
+      <note default-x="94.30" default-y="-380.00">
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -3088,7 +3088,7 @@ arr. David Samson</creator>
           <text>side</text>
           </lyric>
         </note>
-      <note default-x="167.42" default-y="-380.00">
+      <note default-x="168.32" default-y="-380.00">
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -3103,7 +3103,7 @@ arr. David Samson</creator>
           </lyric>
         </note>
       </measure>
-    <measure number="15" width="240.79">
+    <measure number="15" width="236.26">
       <note default-x="19.79" default-y="-400.00">
         <pitch>
           <step>G</step>
@@ -3119,7 +3119,7 @@ arr. David Samson</creator>
           <text>joy</text>
           </lyric>
         </note>
-      <note default-x="61.98" default-y="-400.00">
+      <note default-x="61.11" default-y="-400.00">
         <pitch>
           <step>G</step>
           <octave>2</octave>
@@ -3134,7 +3134,7 @@ arr. David Samson</creator>
           <text>ful</text>
           </lyric>
         </note>
-      <note default-x="104.18" default-y="-400.00">
+      <note default-x="102.43" default-y="-400.00">
         <pitch>
           <step>G</step>
           <octave>2</octave>
@@ -3148,7 +3148,7 @@ arr. David Samson</creator>
           <text>mem</text>
           </lyric>
         </note>
-      <note default-x="171.68" default-y="-380.00">
+      <note default-x="168.55" default-y="-380.00">
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -3161,11 +3161,11 @@ arr. David Samson</creator>
         <stem>down</stem>
         <lyric number="1">
           <syllabic>end</syllabic>
-          <text>ories</text>
+          <text>'ries</text>
           </lyric>
         </note>
       </measure>
-    <measure number="16" width="167.44">
+    <measure number="16" width="168.58">
       <note default-x="28.17" default-y="-385.00">
         <pitch>
           <step>C</step>

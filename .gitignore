@@ -4,3 +4,9 @@ speech/forced_alignment/montreal-forced-aligner_linux.tar.gz
 speech/forced_alignment/montreal-forced-aligner/lib
 speech/forced_alignment/montreal-forced-aligner/pretrained_models
 speech/voices/
+speech/tts_cache/
+
+output/old/
+output/*.wav
+
+__pycache__/

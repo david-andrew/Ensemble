@@ -42,7 +42,8 @@ for f = 1:num_voices
             %handle duration stretching based on if the left and/or right
             %portions of the note are sustained
             
-            center_index = floor((note.vstart + note.vstop) * fs / 2);%index of the center of the vowel for possible stretching. index from the entire word, not the left + right sample only
+            %center_index = floor((note.vstart + note.vstop) * fs / 2);%index of the center of the vowel for possible stretching. index from the entire word, not the left + right sample only
+            center_index = floor(interp1([0 1], [note.vstart note.vstop], 0.40) * fs);
             [center_index, ~] = find_zero_cross(wordIn, center_index); %get the index of the nearest zero cross
             
             if ~note.lsust
@@ -84,9 +85,11 @@ for f = 1:num_voices
                     
             
             %compute the pitch of the sample
-            [f0,idx] = pitch(wordIn,fs, 'Method', 'NCF', 'MedianFilterLength', 25);
+            [f0,idx] = pitch(wordIn,fs, 'Method', 'PEF', 'MedianFilterLength', 10);
             idx = idx(~isnan(f0));
             f0 = f0(~isnan(f0));
+            idx = [1; idx; length(wordIn)]; %add indices at 1 and end, so that the entire word is pitch shifted
+            f0 = [f0(1); f0; f0(end)];
             f_target = note.pitch;
             n_shift = (12/log(2)) .* log(f_target ./ f0 .* pitch_up);
 
@@ -101,7 +104,7 @@ for f = 1:num_voices
             
             
             %apply the current dynamics to the part
-            wordOut = wordOut * note.volume;
+            wordOut = wordOut * note.volume / mean(abs(wordOut));
 
 
             audioOut(sample:sample+length(wordOut)-1) = audioOut(sample:sample+length(wordOut)-1) + wordOut ./ num_voices;
@@ -123,8 +126,8 @@ end
 
 audioOut = audioOut(start:stop); %chop off extra padded sound
 
-fprintf('Adding reverb to performance\n');
-audioOut = add_reverb(audioOut, FS, 1);
+% fprintf('Adding reverb to performance\n');
+% audioOut = add_reverb(audioOut, FS, 1);
 
 %determine the path to write the file to (ensuring not to overwrite existing files)
 outpath = [homepath '/output/' name '.wav'];
