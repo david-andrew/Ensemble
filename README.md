@@ -17,14 +17,11 @@ select a valid MusicXML file from the dialog, and then the song performances wil
 The sheet music (MusicXML) for several pieces is available in the `/sheet_music` folder. Example performances (WAV) of the pieces are available in the `/output/demos` folder
 
 # To-Do:
-* look into ways for not redownloading the same voice clip multiple times, e.g. keep track of which voices downloaded which words, and store them centrally, and then copy them into each parts' folder as needed. put them in the tts_database folder with their settings in their name. also include the textgrid in the same folder with the same name
 * fix the extend method so that it is always a smooth transition into the the stretched center of the vowel. It works most of the time, but there are still a lot of cases where it does not get a proper pitch for the vowel. Perhaps look at the mean pitch in the vowel, and try to match that rather than just whatever period we landed on.
-* test sustained notes that combine to be a single note (e.g. quarter tied to eight vs dotted quarter). should produce identical notes in both cases. look into combining such notes in the recipe back into a single note
-* (possibly same cause as above) figure out why there are sometimes gaps in sound signals placed. sound should be connected between words and syllables unless there is a rest
 * look into dynamics control based on the intensity of the waveform
 * make it so that parts can have multiple notes at the same time (chords I think?)
 * make it so that multiple voices can be on the same line at a time
-* when stitching syllables, make each boundary a zero crossing (if next word dirivative at zcc is wrong, invert the sound signal)
+* when stitching syllables, make each boundary a zero crossing (if next word derivative at zcc is wrong, invert the sound signal)
 * in python, detect when the same syllable is repeated over multiple notes (i.e. redo the function for extracting words and determining what syllable the of the word (according to the music) is being sung)
 * figure out why the forced aligner fails in a lot of cases
 * make each voice part use multiple singers
@@ -32,4 +29,3 @@ The sheet music (MusicXML) for several pieces is available in the `/sheet_music`
 * for time stretching samples, look into some method to evaluate the quality of the period selected. Sometimes it sounds like an artifact is selected as part of the period, so perhaps the method could be to sweep over the vowel and pull out a period that is most average
 * look into integrating audiveris for optical music recognition, so that the software can do a full end to end performance, starts with a PDF of sheet music, and ending with the audio recording
 * move all signal processing from matlab to python (i.e. replace pitch detection, pitch shifting, and time stretching, with numpy and probably c++ libraries)
-
