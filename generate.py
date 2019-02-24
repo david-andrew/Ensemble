@@ -156,7 +156,7 @@ def construct_recipe():
  
         #set up state variables for this voice part
         sequence = []                                                       #empty list to hold the sequence of sounds made by this voice
-        tempo = 60                                                         #default tempo assumed to be 120 beats per minute (this is the musescore defailt tempo)
+        tempo = 120                                                         #default tempo assumed to be 120 beats per minute (this is the musescore defailt tempo)
         dynamics = 'mf'                                                     #default dynamics. for now, dynamics are being ignored
 
 
@@ -554,11 +554,11 @@ audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.
 #tts_speaker = voice_map[element.instrument.instrumentName]
 #British English Voices
 tts_voices = {
-    'Soprano':  'en-GB-Wavenet-A',  #en-US-Wavenet-F
-    'Alto':     'en-GB-Wavenet-C',  #en-US-Wavenet-C, en-US-Wavenet-E, 
-    'Tenor':    'en-GB-Wavenet-D',  #en-US-Wavenet-A #en-GB-Wavenet-B doesn't seem to work very well, even though it sounds like a temor, so using the bass voice of D
+    'Soprano':  'en-GB-Wavenet-A',
+    'Alto':     'en-GB-Wavenet-C', 
+    'Tenor':    'en-GB-Wavenet-B',  #en-GB-Wavenet-B doesn't seem to work very well, even though it sounds like a temor, so using the bass voice of D
     'Baritone': 'en-GB-Wavenet-D',
-    'Bass':     'en-GB-Wavenet-D',  #en-US-Wavenet-B, en-US-Wavenet-D
+    'Bass':     'en-GB-Wavenet-D',
 }
 
 #American English Voices

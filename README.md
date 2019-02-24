@@ -1,5 +1,5 @@
 # System Requirments:
-1. Python
+1. Python3
     * google cloud text to speech
     * music21
     * textgrid

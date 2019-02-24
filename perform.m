@@ -43,7 +43,7 @@ for f = 1:num_voices
             %portions of the note are sustained
             
             %center_index = floor((note.vstart + note.vstop) * fs / 2);%index of the center of the vowel for possible stretching. index from the entire word, not the left + right sample only
-            center_index = floor(interp1([0 1], [note.vstart note.vstop], 0.40) * fs);
+            center_index = floor(interp1([0 1], [note.vstart note.vstop], 0.6) * fs);
             [center_index, ~] = find_zero_cross(wordIn, center_index); %get the index of the nearest zero cross
             
             if ~note.lsust
@@ -85,7 +85,7 @@ for f = 1:num_voices
                     
             
             %compute the pitch of the sample
-            [f0,idx] = pitch(wordIn,fs, 'Method', 'PEF', 'MedianFilterLength', 10);
+            [f0,idx] = pitch(wordIn,fs, 'Method', 'PEF', 'MedianFilterLength', 25);
             idx = idx(~isnan(f0));
             f0 = f0(~isnan(f0));
             idx = [1; idx; length(wordIn)]; %add indices at 1 and end, so that the entire word is pitch shifted
