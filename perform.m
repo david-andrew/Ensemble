@@ -104,7 +104,7 @@ for f = 1:num_voices
             
             
             %apply the current dynamics to the part
-            wordOut = wordOut * note.volume / mean(abs(wordOut));
+            wordOut = wordOut * note.volume / (mean(abs(wordOut)) * 2);
 
 
             audioOut(sample:sample+length(wordOut)-1) = audioOut(sample:sample+length(wordOut)-1) + wordOut ./ num_voices;
