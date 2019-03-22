@@ -159,6 +159,7 @@ def construct_recipe():
         #set up state variables for this voice part
         sequence = []                                                       #empty list to hold the sequence of sounds made by this voice
         dynamics = 'mf'                                                     #default dynamics. for now, dynamics are being ignored
+        beat = 0                                                            #keep track of how many beats have elapsed
 
 
         #list of useful elements:
@@ -172,7 +173,6 @@ def construct_recipe():
         # ?music21.bar.Barline  -> I think specifies ending 1 vs ending 2
 
         for element in part.flat: #
-            beat = 0 #keep track of how many beats have elapsed
             tempo = get_tempo(song, beat)
 
             #IGNORE THIS WHILE TEMPO MARK IS NOT CONTINUED ACCROSS ALL PARTS
