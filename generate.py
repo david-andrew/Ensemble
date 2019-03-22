@@ -152,11 +152,12 @@ def construct_recipe():
     #for doing proper tempo, before extracting parts, create a tempo sequence that contains every tempo and the beat on which they occur. then while collecting each voice part, keep track of the beat, and insert the tempo changes into the sequences at the right points
     #need to be careful though so that things remain aligned when doing this
 
+
+
     for voice_name, part in zip(recipe, song.parts):
  
         #set up state variables for this voice part
         sequence = []                                                       #empty list to hold the sequence of sounds made by this voice
-        tempo = 120                                                         #default tempo assumed to be 120 beats per minute (this is the musescore defailt tempo)
         dynamics = 'mf'                                                     #default dynamics. for now, dynamics are being ignored
 
 
@@ -171,7 +172,8 @@ def construct_recipe():
         # ?music21.bar.Barline  -> I think specifies ending 1 vs ending 2
 
         for element in part.flat: #
-
+            beat = 0 #keep track of how many beats have elapsed
+            tempo = get_tempo(song, beat)
 
             #IGNORE THIS WHILE TEMPO MARK IS NOT CONTINUED ACCROSS ALL PARTS
             #probably fix this by doing a pass over the piece and inserting the tempo at every voice when it comes up in the top line
@@ -197,14 +199,20 @@ def construct_recipe():
                     'lsust': lsust,                                 #is this syllable sustained from the previous note
                     'rsust': rsust,                                 #is this syllable sustained into the next note
                 })
+
+                beat += element.quarterLength                       #increment the beat counter
+
                 
 
 
             if type(element) is music21.note.Rest:
                 sequence.append({
                     'volume': 0.0,                                  # 0 pitch indicates rest
-                    'duration': 60 / tempo * element.quarterLength       # duration of rest in seconds
+                    'duration': 60 / tempo * element.quarterLength  # duration of rest in seconds
                 })
+
+                beat += element.quarterLength                       #increment the beat counter
+
 
 
             if type(element) is music21.dynamics.Dynamic:
@@ -243,6 +251,14 @@ def call_matlab():
 
 
 ########INSERT OTHER HELPER METHODS FOR CONSTRUCTING THE RECIPE############
+
+def get_tempo(song, beat):
+    """Return the tempo at the specified beat of the song"""
+    for start, stop, tempo in song.metronomeMarkBoundaries():
+        if beat >= start and beat <= stop:
+            return tempo.getQuarterBPM()
+
+
 
 
 def int_to_roman(input):
@@ -340,7 +356,7 @@ def get_prev(note):
     raise ValueError('Get previous note was not able to find a previous note')
 
 
-def download_words(dictionary, voice_name, tts_speaker, speed=100):
+def download_words(dictionary, voice_name, tts_speaker, speed=135):
     """download all of the words specified in the dictionary for the given voice part"""
     
     #create directories for storing the words (cache folder and working folder)

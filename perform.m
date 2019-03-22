@@ -137,8 +137,10 @@ while exist(outpath, 'file') == 2
     i = i + 1;
 end
 
-
+outfilename = [name ' (' int2str(i) ')' '.wav'];
+fprintf('Writing song to file %s\n\n', outfilename);
 audiowrite(outpath, audioOut, FS);
+
 
 if ~usejava('desktop')
     exit %make matlab quit in the terminal, to return control to python
