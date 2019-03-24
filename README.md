@@ -9,9 +9,16 @@
 
 # How to use:
 ```
-$ python3 generate.py
+$ python3 generate.py [optional flags]
 ```
 select a valid MusicXML file from the dialog, and then the song performances will be placed in the `/output` folder. 
+
+Several command-line flags can be used to affect how the program runs:
+* `--validate`: Run validation on speech alignment (typically the program will crash the first time running a new song without this option)
+* `--no-tts`: Skip the downloading the words from the song. Speech files are cached, so this typically isn't necessary
+* `--no-align`: Skip the speech audio alignment to phoneme information
+* `--reset-cache`: Delete all previously downloaded speech audio files that have been cached
+* `--no-text`: Replace all lyrics with the vowel 'Ah'
 
 # Examples:
 The sheet music (MusicXML) for several pieces is available in the `/sheet_music` folder. Example performances (WAV) of the pieces are available in the `/output/demos` folder
