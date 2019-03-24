@@ -23,7 +23,7 @@ import struct
 
 #manage command line arguments
 args = [arg.lower() for arg in sys.argv[1:]]
-kwargs = ['--validate', '--no-tts', '--no-align', '--reset-cache']
+kwargs = ['--validate', '--no-tts', '--no-align', '--reset-cache', '--no-text']
 
 for arg in args:
     if arg not in kwargs:
@@ -33,6 +33,7 @@ VALIDATE_ALIGNMENT = kwargs[0] in args  #run validation on the audio corpus
 SKIP_TTS_DOWNLOAD = kwargs[1] in args   #skip redownloading the words for the song (as in they are there from last time)
 SKIP_ALIGNMENT = kwargs[2] in args      #skip aligning phonemes to the words in the song
 RESET_CACHE = kwargs[3] in args         #delete any cached versions of the words in the song
+NO_TEXT = kwargs[4] in args             #replace all text in the song with the word "ah"
 
 
 def main():
@@ -104,7 +105,10 @@ def create_tts_palette():
     print('Creating Text-to-Speech wav palettes')
     for voice_name, part in zip(recipe, song.parts):
         voice_type = get_voice_type(voice_name)
-        dictionary = construct_dictionary(part)
+        if not NO_TEXT:
+            dictionary = construct_dictionary(part)
+        else:
+            dictionary = set(('ah',)) #all words are 'Ah'
         download_words(dictionary, voice_name, tts_voices[voice_type])
         print('')
 
@@ -453,17 +457,23 @@ def clip_silence(waveform, threshold=100):
 
 def segment_word(note, voice_name):
     """look at the syllables of the lyrics, and combined with the phonetic alignment (mainly phonetics for syllable counting), determine which portion of the word represents the current note"""
-    word, index = get_current_word(note)
-
-    #Determine left and right sustains. sustained notes should start from vowel rather than necessarily the first phoneme
-    #determine if this note was sustained into from the previous note
-    lsust = note.lyric is None 
     
-    #determine if this note sustaines into the next note
-    try:
-        rsust = get_next(note).lyric is None
-    except:
-        rsust = False
+    if not NO_TEXT:
+        word, index = get_current_word(note)
+
+        #Determine left and right sustains. sustained notes should start from vowel rather than necessarily the first phoneme
+        #determine if this note was sustained into from the previous note
+        lsust = note.lyric is None 
+        
+        #determine if this note sustaines into the next note
+        try:
+            rsust = get_next(note).lyric is None
+        except:
+            rsust = False
+    else:
+        word, index = 'ah', 1
+        lsust = True#determine if first note?
+        rsust = True
 
 
 
