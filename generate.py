@@ -287,6 +287,7 @@ def construct_dictionary(part):
     for element in part.flat:
         if type(element) is music21.note.Note:
             word, _ = get_current_word(element)
+            # if word in ['ly', 'lullylulla', 'byly']: pdb.set_trace() #check for ill-formed lyrics in the song. potentially replace this with a function that checks for mismatches between lsust and rsust (i.e. music21 single, begin, middle, end)
             dictionary.add(word)
 
     return dictionary
@@ -470,10 +471,16 @@ def segment_word(note, voice_name):
             rsust = get_next(note).lyric is None
         except:
             rsust = False
+    
     else:
-        word, index = 'ah', 1
-        lsust = True#determine if first note?
-        rsust = True
+        word, index = 'ah', 1   #every note will be given the 'Ah' vowel
+        rsust = True            #all notes sustain to the right because articulating with lsust=False is enough to sound correct
+        try: 
+            #in all cases where the syllable exists for this note, rearticulate here, else sustain 
+            note.lyrics[0].syllabic #if this doesn't exist, then the exception triggers the sustain
+            lsust = False
+        except:
+            lsust = True
 
 
 
@@ -505,7 +512,7 @@ def segment_word(note, voice_name):
         syllables[-2] += syllables[-1]
         syllables = syllables[0:-1] 
 
-    
+    # if len(syllables) < index: pdb.set_trace() #check for errors in words
     rcount = len(''.join(syllables[:index]))
     lcount = rcount - len(syllables[index-1])
     syllable = phonemes[lcount:rcount] #get the current syllable
